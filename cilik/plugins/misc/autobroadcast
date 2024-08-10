@@ -1,0 +1,74 @@
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
+import asyncio
+from datetime import datetime, timedelta
+
+from pyrogram import filters
+from pyrogram.errors import FloodWait
+from pyrogram.raw import types
+
+import config
+from cilik import cilik, ub
+from cilik.misc import SUDOERS
+from cilik.utils.database import get_served_chats, get_served_users
+
+
+query = "📢 Promo Cilik Store\n\n- Nokos fresh Indo/Luar\n- Followers IG/TIKTOK/SHOPEE\n- Add member / Channel Telegram\n- Reaction / Views Channel\n\n- Deploy Bot Filesharing / asupan , Bot Manage + Music, Bot Music, Userbot Small, Bot menfess\n\n- dan lain-lain\n\n- Order Chat @greyvbss"
+
+
+
+
+async def job_broad():
+    sent = 0
+    chats = []
+    schats = await get_served_chats()
+    for chat in schats:
+        chats.append(int(chat["chat_id"]))
+    for i in chats:
+        if i == -1001733534088:
+            continue
+        try:
+            m = await cilik.send_message(i, text=query)
+            sent += 1
+        except FloodWait as e:
+            flood_time = int(e.x)
+            if flood_time > 200:
+                continue
+            await asyncio.sleep(flood_time)
+        except Exception:
+            continue
+    try:
+        await cilik.send_message("greyvbss", f"Broadcasted to {sent} Chats!")
+    except:
+        pass
+
+async def job_user():
+    susr = 0
+    served_users = []
+    susers = await get_served_users()
+    for user in susers:
+        served_users.append(int(user["user_id"]))
+    for i in served_users:
+        try:
+            m = await cilik.send_message(i, text=query)
+            susr += 1
+        except FloodWait as e:
+            flood_time = int(e.x)
+            if flood_time > 200:
+                continue
+            await asyncio.sleep(flood_time)
+        except Exception:
+            pass
+    try:
+        await cilik.send_message("greyvbss", f"Broadcasted to {susr} Users!")
+    except:
+        pass
+
+scheduler = AsyncIOScheduler(timezone="Asia/Jakarta")
+scheduler.add_job(job_broad, trigger="cron", hour=6, minute=59)
+#scheduler.add_job(job_broad, trigger="cron", hour=11, minute=59)
+#scheduler.add_job(job_broad, trigger="cron", hour=14, minute=59)
+scheduler.add_job(job_broad, trigger="cron", hour=17, minute=59)
+scheduler.add_job(job_broad, trigger="cron", hour=20, minute=59)
+#scheduler.add_job(job_user, trigger="cron", hour=9, minute=59)
+#scheduler.add_job(job_user, trigger="cron", hour=21, minute=59)
+scheduler.start()
