@@ -1,5 +1,5 @@
 # Netscape HTTP Cookie File
-# http://curl.haxx.se/rfc/cookie_spec.html
+# https://api.cloudflare.com/client/v4/user/tokens/verify
 .youtube.com    TRUE    /    FALSE    1721728958    ST-xuwub9    session_logininfo=AFmmF2swRQIhALuz5g2U37VjXMjSr21g1aEXTx9ovJWz2vSKD_ZZnNnaAiA8wdKwdT9ov_JN4wr6YZz5eRJyY2HW6rms_i34ex-2DA%3AQUQ3MjNmenF4SjdDdlZJNk1iYVo3UnhfVHNmZ09QYnpSUHg0bzhvcWphMDBqWVdaVExWYkY3Zk0xTkFlOTZETFJETVV0c1VoUVFFdkRvSENyU2ZENzZ6UUdqQS1nTzZ5NHczdDAzcU5DREFZR0FzQ290M2RJTlRBaE0yRXp4ajZUTFh4cDRBRXI1NWZ0a2doamtoN2xxNXRORldJSzV3aDdR
 HttpOnly_.youtube.com    TRUE    /    TRUE    1756288913    __Secure-3PSID    g.a000mAgr1SRKizguEJMBVBsw9kiPq3VOvuVv2VQDoG2ifIPmjnAlkvE7R0MJNNbZaG5N4wZi7AACgYKAY4SARISFQHGX2Mi8j3kOKmHhWwgZtf_WQ6dlxoVAUF8yKqn-4m-HrB_R-_vG2tvangM0076
 .youtube.com    TRUE    /    FALSE    1753264955    SIDCC    AKEyXzXGTv663eXJmD75BZ0yLjF0wetBYeXkCmrtJcjZ2kkK7GIvzGjjLnyBJMc6qWbIS7rf
