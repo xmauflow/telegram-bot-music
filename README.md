@@ -1,4 +1,4 @@
-<h2 align="centre">Cilik Music</h2>
+<h2 align="centre">Telegram-Bot-Music</h2>
 
 <p align="center">
   <img src="https://telegra.ph/file/062af7533fb7f44a30f0c.jpg">
